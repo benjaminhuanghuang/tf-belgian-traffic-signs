@@ -1,5 +1,10 @@
 import os
-import skimage
+import tensorflow as tf
+from skimage import transform
+from skimage import data
+import numpy as np
+from skimage.color import rgb2gray
+
 
 
 def load_data(data_directory):
@@ -13,7 +18,7 @@ def load_data(data_directory):
                       for f in os.listdir(label_directory)
                       if f.endswith(".ppm")]
         for f in file_names:
-            images.append(skimage.data.imread(f))
+            images.append(data.imread(f))
             labels.append(int(d))
     return images, labels
 

@@ -1,2 +1,4 @@
 scikit-image
 matplotlib
+tensorflow
+numpy
